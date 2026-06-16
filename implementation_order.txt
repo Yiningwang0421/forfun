@@ -1,134 +1,137 @@
+Status Bar: [----------------------------------------------------------------------------------------------------] 0/100 not written
+Legend: [written] written   [not written] not written   [not validated] not validated   [validated] validation passed
+
 Phase 1: Foundation & Infrastructure
-1. riscv_types_pkg.sv - All type defs, constants, enums
-2. reset_controller.sv - Reset sequencing
-3. boot_rom.sv - Bootstrap code
+1. riscv_types_pkg.sv - All type defs, constants, enums [written]
+2. reset_controller.sv - Reset sequencing [written]
+3. boot_rom.sv - Bootstrap code [not written]
 
 Phase 2: Basic Execution Unit
-5. physical_register_file.sv - Register storage
-6. integer_alu.sv - Integer ALU operations
-7. immediate_generator.sv - Extract immediates from instruction bits
-8. decoder.sv - Decode RV64I base instructions
-9. compressed_decoder.sv - RVC support
-10. pc_unit.sv - Program counter management
+5. physical_register_file.sv - Register storage [written]
+6. integer_alu.sv - Integer ALU operations [written]
+7. immediate_generator.sv - Extract immediates from instruction bits [written]
+8. decoder.sv - Decode RV64I base instructions [written]
+9. compressed_decoder.sv - RVC support [written]
+10. pc_unit.sv - Program counter management [not written]
 
 Phase 3: Simple Frontend
-11. instruction_fetch.sv - Fetch from memory
-12. fetch_queue.sv - IF buffer
-13. frontend.sv - Frontend controller
-14. branch_predictor.sv - Baseline prediction stub
-15. bht_pht.sv - Branch history tables
-16. btb.sv - Branch target buffer
-17. ras.sv - Return address stack
+11. instruction_fetch.sv - Fetch from memory [not written]
+12. fetch_queue.sv - IF buffer [not written]
+13. frontend.sv - Frontend controller [not written]
+14. branch_predictor.sv - Baseline prediction stub [not written]
+15. bht_pht.sv - Branch history tables [not written]
+16. btb.sv - Branch target buffer [not written]
+17. ras.sv - Return address stack [not written]
 
 Phase 4: Simple In-Order Pipeline
-18. decode_rename_stage.sv - Decode stage controller
-19. register_alias_table.sv - Logical to physical mapping
-20. free_list.sv - Physical register allocation
-21. memory_stage.sv - Memory stage stub
-22. load_store_unit.sv - Basic load/store
-23. writeback_stage.sv - Register writeback
-24. common_data_bus.sv - Result broadcast
+18. decode_rename_stage.sv - Decode stage controller [not written]
+19. register_alias_table.sv - Logical to physical mapping [not written]
+20. free_list.sv - Physical register allocation [not written]
+21. memory_stage.sv - Memory stage stub [not written]
+22. load_store_unit.sv - Basic load/store [not written]
+23. writeback_stage.sv - Register writeback [not written]
+24. common_data_bus.sv - Result broadcast [not written]
 
 Phase 5: Memory System
-25. memory_arbiter.sv - Request arbitration
-26. dram_interface.sv - DRAM interface
-27. ddr_controller.sv - DDR controller
-28. memory_subsystem.sv - Memory top-level
-29. axi_interconnect.sv - AXI protocol
+25. memory_arbiter.sv - Request arbitration [not written]
+26. dram_interface.sv - DRAM interface [not written]
+27. ddr_controller.sv - DDR controller [not written]
+28. memory_subsystem.sv - Memory top-level [not written]
+29. axi_interconnect.sv - AXI protocol [not written]
 
 Phase 6: L1 Caches
-30. core0_l1_i_cache.sv - Core0 instruction cache
-31. core0_l1_d_cache.sv - Core0 data cache
-32. instruction_address_translator.sv - VM stub for fetch
-33. itlb.sv - Instruction TLB stub
+30. core0_l1_i_cache.sv - Core0 instruction cache [not written]
+31. core0_l1_d_cache.sv - Core0 data cache [not written]
+32. instruction_address_translator.sv - VM stub for fetch [not written]
+33. itlb.sv - Instruction TLB stub [not written]
 
 Phase 7: Out-of-Order Execution
-34. reorder_buffer.sv - ROB implementation
-35. reservation_station.sv - Issue queue
-36. load_store_queue.sv - LSQ
-37. dispatch_stage.sv - Dispatch logic
-38. rename_checkpoint.sv - Rename recovery state
-39. wakeup_logic.sv - Dependency wakeup
+34. reorder_buffer.sv - ROB implementation [not written]
+35. reservation_station.sv - Issue queue [not written]
+36. load_store_queue.sv - LSQ [not written]
+37. dispatch_stage.sv - Dispatch logic [not written]
+38. rename_checkpoint.sv - Rename recovery state [not written]
+39. wakeup_logic.sv - Dependency wakeup [not written]
 
 Phase 8: Additional Execution Units
-40. multiplier_divider.sv - M extension
-41. branch_unit.sv - Branch execution
-42. address_generation_unit.sv - Effective address calculation
-43. floating_point_unit.sv - F and D extensions
+40. multiplier_divider.sv - M extension [not written]
+41. branch_unit.sv - Branch execution [not written]
+42. address_generation_unit.sv - Effective address calculation [not written]
+43. floating_point_unit.sv - F and D extensions [not written]
 
 Phase 9: Memory Ordering & Atomics
-44. atomic_memory_unit.sv - A extension
-45. memory_ordering_unit.sv - Fence and ordering logic
-46. store_buffer.sv - Store buffering
-47. fence_unit.sv - FENCE and FENCE.I
+44. atomic_memory_unit.sv - A extension [not written]
+45. memory_ordering_unit.sv - Fence and ordering logic [not written]
+46. store_buffer.sv - Store buffering [not written]
+47. fence_unit.sv - FENCE and FENCE.I [not written]
 
 Phase 10: Privilege & CSRs
-48. csr_unit.sv - CSR read/write handling
-49. mstatus.sv - Machine status
-50. mtvec.sv - Machine trap vector
-51. mepc.sv - Machine exception PC
-52. mcause.sv - Machine cause
-53. user_mode.sv - User privilege logic
-54. machine_mode.sv - Machine privilege logic
-55. privilege_subsystem.sv - Privilege controller
-56. external_interrupt.sv - External interrupt handling
-57. timer_interrupt.sv - Timer interrupt handling
+48. csr_unit.sv - CSR read/write handling [not written]
+49. mstatus.sv - Machine status [not written]
+50. mtvec.sv - Machine trap vector [not written]
+51. mepc.sv - Machine exception PC [not written]
+52. mcause.sv - Machine cause [not written]
+53. user_mode.sv - User privilege logic [not written]
+54. machine_mode.sv - Machine privilege logic [not written]
+55. privilege_subsystem.sv - Privilege controller [not written]
+56. external_interrupt.sv - External interrupt handling [not written]
+57. timer_interrupt.sv - Timer interrupt handling [not written]
 
 Phase 11: Virtual Memory Backend
-58. dtlb.sv - Data TLB
-59. address_translation_cache.sv - Translation cache
-60. page_table_walker.sv - Hardware page walker
-61. virtual_memory_backend.sv - VM backend controller
-62. virtual_memory_frontend.sv - Fetch-side VM interface
+58. dtlb.sv - Data TLB [not written]
+59. address_translation_cache.sv - Translation cache [not written]
+60. page_table_walker.sv - Hardware page walker [not written]
+61. virtual_memory_backend.sv - VM backend controller [not written]
+62. virtual_memory_frontend.sv - Fetch-side VM interface [not written]
 
 Phase 12: Supervisor Mode & Full VM
-63. sstatus.sv - Supervisor status
-64. stvec.sv - Supervisor trap vector
-65. sepc.sv - Supervisor exception PC
-66. scause.sv - Supervisor cause
-67. satp.sv - Supervisor address translation and protection
-68. supervisor_mode.sv - Supervisor privilege logic
+63. sstatus.sv - Supervisor status [not written]
+64. stvec.sv - Supervisor trap vector [not written]
+65. sepc.sv - Supervisor exception PC [not written]
+66. scause.sv - Supervisor cause [not written]
+67. satp.sv - Supervisor address translation and protection [not written]
+68. supervisor_mode.sv - Supervisor privilege logic [not written]
 
 Phase 13: System-Level VM
-69. sv39_page_table_support.sv - SV39 support
-70. page_fault_handler.sv - Page fault handling
-71. tlb_shootdown_support.sv - Multi-core TLB invalidation
-72. virtual_memory_subsystem.sv - VM top-level integration
+69. sv39_page_table_support.sv - SV39 support [not written]
+70. page_fault_handler.sv - Page fault handling [not written]
+71. tlb_shootdown_support.sv - Multi-core TLB invalidation [not written]
+72. virtual_memory_subsystem.sv - VM top-level integration [not written]
 
 Phase 14: Interrupt System
-73. msip.sv - Machine software interrupt
-74. mtime.sv - Machine time register
-75. mtimecmp.sv - Machine time compare
-76. clint.sv - Core local interrupt timer
-77. plic.sv - Platform-level interrupt controller
-78. interrupt_subsystem.sv - Interrupt top-level
-79. csr_interrupt_system.sv - CSR and interrupt integration
+73. msip.sv - Machine software interrupt [not written]
+74. mtime.sv - Machine time register [not written]
+75. mtimecmp.sv - Machine time compare [not written]
+76. clint.sv - Core local interrupt timer [not written]
+77. plic.sv - Platform-level interrupt controller [not written]
+78. interrupt_subsystem.sv - Interrupt top-level [not written]
+79. csr_interrupt_system.sv - CSR and interrupt integration [not written]
 
 Phase 15: Exceptions & Commit
-80. exception_handler.sv - Exception handling
-81. architectural_state_update.sv - Architectural state update
-82. rob_commit_logic.sv - ROB retirement logic
-83. commit_stage.sv - Commit controller
-84. core0.sv - Core top-level integration
+80. exception_handler.sv - Exception handling [not written]
+81. architectural_state_update.sv - Architectural state update [not written]
+82. rob_commit_logic.sv - ROB retirement logic [not written]
+83. commit_stage.sv - Commit controller [not written]
+84. core0.sv - Core top-level integration [not written]
 
 Phase 16: Caching & Coherency
-85. core1_l1_i_cache.sv - Core1 instruction cache
-86. core1_l1_d_cache.sv - Core1 data cache
-87. shared_l2_cache.sv - Shared L2 cache
-88. mesi_controller.sv - MESI protocol
-89. snoop_logic.sv - Snoop and invalidate logic
-90. cache_coherence_unit.sv - Coherence controller
-91. cache_subsystem.sv - Cache subsystem integration
+85. core1_l1_i_cache.sv - Core1 instruction cache [not written]
+86. core1_l1_d_cache.sv - Core1 data cache [not written]
+87. shared_l2_cache.sv - Shared L2 cache [not written]
+88. mesi_controller.sv - MESI protocol [not written]
+89. snoop_logic.sv - Snoop and invalidate logic [not written]
+90. cache_coherence_unit.sv - Coherence controller [not written]
+91. cache_subsystem.sv - Cache subsystem integration [not written]
 
 Phase 17: Boot & Hart Control
-92. hart_start_controller.sv - Multi-core hart startup
-93. boot_rom.sv - Bootstrap code
-94. opensbi_loader.sv - OpenSBI bootloader support
-95. boot_subsystem.sv - Boot subsystem integration
+92. hart_start_controller.sv - Multi-core hart startup [not written]
+93. boot_rom.sv - Bootstrap code [not written]
+94. opensbi_loader.sv - OpenSBI bootloader support [not written]
+95. boot_subsystem.sv - Boot subsystem integration [not written]
 
 Phase 18: Debug & Monitoring
-96. performance_counters.sv - Performance counters
-97. debug_interface.sv - Debug interface
-98. trace_unit.sv - Execution trace
-99. debug_performance_system.sv - Debug and performance integration
-100. multicore_riscv_cpu_top.sv - System top-level integration
+96. performance_counters.sv - Performance counters [not written]
+97. debug_interface.sv - Debug interface [not written]
+98. trace_unit.sv - Execution trace [not written]
+99. debug_performance_system.sv - Debug and performance integration [not written]
+100. multicore_riscv_cpu_top.sv - System top-level integration [not written]
