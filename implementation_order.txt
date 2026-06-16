@@ -4,7 +4,7 @@ Legend: [written] written   [not written] not written   [not validated] not vali
 Phase 1: Foundation & Infrastructure
 1. riscv_types_pkg.sv - All type defs, constants, enums [written]
 2. reset_controller.sv - Reset sequencing [written]
-3. boot_rom.sv - Bootstrap code [not written]
+3. boot_rom.sv - Bootstrap code [written, but did not finish the boot_rom.hex, can not be verified]
 
 Phase 2: Basic Execution Unit
 5. physical_register_file.sv - Register storage [written]
